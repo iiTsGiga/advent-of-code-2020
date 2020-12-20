@@ -8,15 +8,11 @@ for rule in rules_inp.split('\n'):
     rules[int(i)] = r.strip('\"')
 
 def evaluate(i):
-    rule = rules[i]
-    if rule in 'ab':
-        return rule
-    parts = rule.split(' | ')
+    if rules[i] in 'ab':
+        return rules[i]
+    parts = rules[i].split(' | ')
     for j, p in enumerate(parts):
-        r = p.split()
-        for x, n in enumerate(r):
-            r[x] = evaluate(int(n))
-        parts[j] = '(' + ''.join(r) + ')'
+        parts[j] = '(' + ''.join(evaluate(int(n)) for n in p.split()) + ')'
     return '(' + '|'.join(parts) + ')'
 
 c1, c2 = 0, -1
