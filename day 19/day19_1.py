@@ -8,19 +8,11 @@ for rule in rules_inp.split("\n"):
 messages = messages_inp.split("\n")
 
 def evaluate(i):
-    rule = rules[i]
-    if rule in "ab":
-        return rule
-    parts = rule.split(" | ")
+    if rules[i] in "ab":
+        return rules[i]
+    parts = rules[i].split(" | ")
     for j, p in enumerate(parts):
-        r = p.split()
-        for x, n in enumerate(r):
-            ev = evaluate(int(n))
-            if ev in "ab":
-                r[x] = ev
-            else:
-                r[x] = '(' + ev + ')'
-        parts[j] = '(' + ''.join(r) + ')'
+        parts[j] = '(' + ''.join(evaluate(int(n)) for n in p.split()) + ')'
     return '(' + '|'.join(parts) + ')'
 
 expr = evaluate(0)
