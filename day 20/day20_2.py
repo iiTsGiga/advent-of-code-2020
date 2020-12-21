@@ -87,7 +87,7 @@ img[0][0] = [id for id in tiles if len(neighbours[id]) == 2][0]  # tiles with 2 
 
 # align from the top left corner to the bottom right corner
 # this goes through each row except for the last
-# each row is build by determining the diagonal (bottom right) neighbours of each tile in the row
+# each row is build by determining the diagonal (bottom right) neighbour of each tile in the row
 # only in the first row the right neighbours also get set
 # afterwards the right neighbours are already set from the previous run
 for i in range(1, N):
