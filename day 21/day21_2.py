@@ -9,6 +9,10 @@ def searchForAllergen():
             allergens.pop(allerg)
             return fnd[0], allerg
 
+# see part 1 for explanation
+# for this part the found ingredients will be saved with the corresponding allergen
+# at the end we just print the ingredients sorted by the allergens
+
 allergens = dict()
 for line in open("day21_input.txt").readlines():
     ingr, allerg = line.strip().split(" (contains ")
