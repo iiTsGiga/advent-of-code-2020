@@ -34,8 +34,6 @@ for line in open("day21_input.txt").readlines():
                 allergens[a][1][i] = 0
             allergens[a][1][i] += 1
 
-print(allergens)
-
 found = []
 while len(allergens) > 0:
     found.append(searchForAllergen())
