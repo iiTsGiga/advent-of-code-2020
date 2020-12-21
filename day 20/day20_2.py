@@ -1,3 +1,10 @@
+"""
+I know this code may be very ugly and/or complicated to read
+but as it already took me over 10-12 hours just to get to this solution
+I didn't want to waste even more of my time refactoring it
+"""
+
+
 # creates each possible borders for the tile
 # "#" is translated to 1 and "." to 0
 # the borders then gets translated from binary into an integer (easier to debug and better in performance when comparing edges)
